@@ -23,17 +23,6 @@ export const usePaymentMethods = () => {
             const response = await fetch(url);
             const methods: RemotePaymentMethod[] = await response.json();
 
-            // if (methods.length > 0) {
-            //     const extended: LocalPaymentMethod[] = methods.map((method) => ({
-            //         provider: method.name,
-            //         label: `Pay with ${method.name}`,
-            //     }));
-            //     extended.push({provider: "cash", label: "Pay in cash"});
-            //     setPaymentMethods(extended);
-            // } else {
-            //     setPaymentMethods([]);
-            // }
-
             setPaymentMethods(convertPaymentMethods(methods));
         };
 

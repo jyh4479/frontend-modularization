@@ -6,7 +6,6 @@ export const PaymentMethods = ({paymentMethods}: { paymentMethods: LocalPaymentM
                     type="radio"
                     name="payment"
                     value={method.provider}
-                    // defaultChecked={method.provider === "cash"}
                     defaultChecked={method.isDefaultMethod}
                 />
                 <span>{method.label}</span>
